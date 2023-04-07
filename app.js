@@ -1,9 +1,20 @@
-// see https://github.com/mu-semtech/mu-javascript-template for more info
+import { app, errorHandler } from 'mu';
+import { publicationFlowsShortlistJsonApi } from './lib/jsonapi';
 
-import { app, query, errorHandler } from 'mu';
+app.get('/', function(_req, res ) {
+  return res.status(200).send({ title: 'Hello from the shortlist service' });
+});
 
-app.get('/', function( req, res ) {
-  res.send('Hello mu-javascript-template');
-} );
+app.get('/publication-flows', async function(_req, res) {
+  try {
+    const response = await publicationFlowsShortlistJsonApi();
+    return res
+      .status(200)
+      .send(response);
+  } catch (e) {
+    console.error(e);
+    next(e);
+  }
+});
 
 app.use(errorHandler);
