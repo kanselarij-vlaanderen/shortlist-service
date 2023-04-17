@@ -1,4 +1,11 @@
 {
+  "name": "shortlist-service",
+  "version": "0.0.1",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanselarij-vlaanderen/shortlist-service.git"
+  },
   "dependencies": {
     "date-fns": "^2.29.3"
   }
