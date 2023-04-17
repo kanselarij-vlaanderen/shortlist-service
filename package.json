@@ -3,7 +3,7 @@
   "description": "Microservice to generate specific lists of data",
   "version": "0.0.1",
   "main": "app.js",
-  "licence": "MIT",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kanselarij-vlaanderen/shortlist-service.git"
