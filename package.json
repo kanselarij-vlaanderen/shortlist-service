@@ -1,7 +1,7 @@
 {
   "name": "shortlist-service",
   "description": "Microservice to generate specific lists of data",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "app.js",
   "license": "MIT",
   "repository": {
