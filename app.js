@@ -5,7 +5,7 @@ app.get('/', function(_req, res ) {
   return res.status(200).send({ title: 'Hello from the shortlist service' });
 });
 
-app.get('/publication-flows', async function(_req, res) {
+app.get('/publication-flows', async function(_req, res, next) {
   try {
     const response = await publicationFlowsShortlistJsonApi();
     return res
@@ -13,11 +13,11 @@ app.get('/publication-flows', async function(_req, res) {
       .send(response);
   } catch (e) {
     console.error(e);
-    next(e);
+    return next(e);
   }
 });
 
-app.get('/sign-flows', async function(_req, res) {
+app.get('/sign-flows', async function(_req, res, next) {
   try {
     const response = await signFlowsShortlistJsonApi();
     return res
@@ -25,7 +25,7 @@ app.get('/sign-flows', async function(_req, res) {
       .send(response);
   } catch (e) {
     console.error(e);
-    next(e);
+    return next(e);
   }
 });
 
